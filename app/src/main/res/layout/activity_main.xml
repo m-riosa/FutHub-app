@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    style="@style/SCREEN"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Switch
+        android:id="@+id/lightSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FutHub"
+        style="@style/TEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07"
+        android:textSize="@android:dimen/app_icon_size"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/buttonLaLiga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_centerInParent="true"
+        android:text="La Liga" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonPrem"
+        android:layout_width="match_parent"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="Premier league" />
+
+    <Button
+        android:id="@+id/buttonSerieA"
+        android:layout_width="match_parent"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="Serie A" />
+
+    <Button
+        android:id="@+id/buttonUCL"
+        android:layout_width="match_parent"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="UCL/UEL/UCL" />
+
+    <Button
+        android:id="@+id/buttonArg"
+        android:layout_width="match_parent"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="Liga Argentina"/>
+
+</LinearLayout>

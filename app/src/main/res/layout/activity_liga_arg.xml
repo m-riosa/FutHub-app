@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtTitlePrem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Liga Argentina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07"
+        android:textSize="@android:dimen/app_icon_size"
+        android:gravity="center"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="82dp" />
+
+    <Button
+        android:id="@+id/btnLigaArg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="To Paramount+"
+        android:onClick="openArg"/>
+</LinearLayout>
