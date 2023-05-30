@@ -32,7 +32,7 @@ public class Conference_League extends AppCompatActivity {
     String next = "50";
     String application = "application/json";
     String host = "api-football-v1.p.rapidapi.com";
-    String apiKey = "9f5fdcc083msh045fb7d8fc51490p1a39e7jsn3b52c5e7b61d";
+    String apiKey = "####";
 
 
     @Override
