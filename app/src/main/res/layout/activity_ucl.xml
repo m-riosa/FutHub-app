@@ -4,32 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    style="@style/SCREEN"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtTitleUCL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="European Competitions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
-        android:textSize="@android:dimen/app_icon_size"
-        android:gravity="center"
-        />
 
-    <Space
+    <Switch
+        android:id="@+id/lightSwitch"
         android:layout_width="match_parent"
-        android:layout_height="82dp" />
+        android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnUCL"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_fixture"
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="To Paramount+"
-        android:onClick="openUcl"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

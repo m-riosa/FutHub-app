@@ -30,4 +30,8 @@
         <item name="android:background">#C6CED1</item>
         <item name="android:textColor">#FFF</item>
     </style>
+    <style name="Matchbox">
+        <item name="android:background">@color/teal_200</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
 </resources>

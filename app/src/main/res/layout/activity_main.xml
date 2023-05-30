@@ -68,7 +68,21 @@
         style="@style/BUTTON"
         android:layout_margin="15dp"
         android:layout_height="wrap_content"
-        android:text="UCL/UEL/UCL" />
+        android:text="Champions League" />
+    <Button
+        android:id="@+id/buttonUEL"
+        android:layout_width="match_parent"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="Europa League" />
+    <Button
+        android:id="@+id/buttonConferenceLeague"
+        android:layout_width="match_parent"
+        style="@style/BUTTON"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:text="Conference League" />
 
     <Button
         android:id="@+id/buttonArg"

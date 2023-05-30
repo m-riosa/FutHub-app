@@ -1,6 +1,7 @@
 package com.example.futhub.manager;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.futhub.ResponseListener;
 import com.example.futhub.models.FixtureResponse;
@@ -34,9 +35,9 @@ public class RequestManager {
         this.context = context;
     }
 
-    public void getFixture(ResponseListener listener, String application, String apiKey, String host, String seasonId, String leagueId){
+    public void getFixture(ResponseListener listener, String application, String apiKey, String host, String next, String leagueId){
         CallFixture callFixture = retrofit.create(CallFixture.class);
-        Call<FixtureResponse> call = callFixture.callFixtures(application, apiKey, host, leagueId, seasonId);
+        Call<FixtureResponse> call = callFixture.callFixtures(application, apiKey, host, leagueId, next);
         call.enqueue(new Callback<FixtureResponse>() {
             @Override
             public void onResponse(Call<FixtureResponse> call, Response<FixtureResponse> response) {
@@ -44,8 +45,10 @@ public class RequestManager {
                     listener.didError(response.message());
                     return;
                 }
+
                 listener.didFetch(response.body(), response.message());
             }
+
 
             @Override
             public void onFailure(Call<FixtureResponse> call, Throwable t) {
@@ -62,7 +65,7 @@ public class RequestManager {
                 @Header("X-RapidAPI-Key") String apiKey,
                 @Header("X-RapidAPI-Host") String host,
                 @Query("league") String leagueId,
-                @Query("season") String seasonId
+                @Query("next") String next
         );
     }
 }

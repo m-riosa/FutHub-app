@@ -1,33 +1,25 @@
 package com.example.futhub;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.futhub.adapter.FixtureAdapter;
 import com.example.futhub.manager.RequestManager;
 import com.example.futhub.models.FixtureResponse;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-
-public class Prem extends AppCompatActivity {
+public class Conference_League extends AppCompatActivity {
     Switch lightSwitch;
     boolean nightMODE;
     SharedPreferences sharedPreferences;
@@ -36,19 +28,19 @@ public class Prem extends AppCompatActivity {
     ProgressDialog dialog;
     RequestManager manager;
 
-    String leagueId = "39"; // English Premier League
+    String leagueId = "848"; // Conference League ID
     String next = "50";
     String application = "application/json";
     String host = "api-football-v1.p.rapidapi.com";
-    String apiKey = "####";
-
+    String apiKey = "9f5fdcc083msh045fb7d8fc51490p1a39e7jsn3b52c5e7b61d";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prem);
+        setContentView(R.layout.activity_ucl);
 
+        //add support for night mode
         getSupportActionBar().hide();
 
         lightSwitch = findViewById(R.id.lightSwitch);
@@ -83,7 +75,7 @@ public class Prem extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
 
-        // pass call to API with league id for Premier League
+        // pass call to API with league id for all leagues included
         manager = new RequestManager(this);
         manager.getFixture(listener, application, apiKey, host, next, leagueId);
         dialog.show();
@@ -95,9 +87,9 @@ public class Prem extends AppCompatActivity {
             dialog.dismiss();
 
             recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new LinearLayoutManager(Prem.this,
+            recyclerView.setLayoutManager(new LinearLayoutManager(Conference_League.this,
                     LinearLayoutManager.VERTICAL, false));
-            FixtureAdapter adapter = new FixtureAdapter(Prem.this, response.response);
+            FixtureAdapter adapter = new FixtureAdapter(Conference_League.this, response.response);
             recyclerView.setAdapter(adapter);
 
         }
@@ -105,37 +97,23 @@ public class Prem extends AppCompatActivity {
         @Override
         public void didError(String message) {
             dialog.dismiss();
-            Toast.makeText(Prem.this, message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(Conference_League.this, message, Toast.LENGTH_SHORT).show();
         }
 
 
     };
 
-
-    // old button code, need to update to fit in recycler view when api is implemented correctly
-//    public void openFubo(View v){
-//        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("tv.fubo.mobile");
-//
-//        if(launchIntent != null){
-//            this.startActivity(launchIntent);
-//        } else{
-//            Toast.makeText(Prem.this, "App not detected, redirecting to website", Toast.LENGTH_LONG).show();
-//            Uri espn = Uri.parse("https://www.fubo.tv/sports/199/soccer");
-//            Intent webIntent = new Intent(Intent.ACTION_VIEW, espn);
-//            startActivity(webIntent);
-//        }
-//    }
     public void openStream(View v){
-        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.peacocktv.peacockandroid");
-        if (launchIntent != null){
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.cbs.app");
+
+        if(launchIntent != null){
             this.startActivity(launchIntent);
-        } else {
-            Toast.makeText(Prem.this, "App not detected, redirecting to website", Toast.LENGTH_LONG).show();
-            Uri espn = Uri.parse("https://www.peacocktv.com");
+        } else{
+            Toast.makeText(Conference_League.this, "App not detected, redirecting to website", Toast.LENGTH_LONG).show();
+            Uri espn = Uri.parse("https://www.paramountplus.com/collections/sports-hub/");
             Intent webIntent = new Intent(Intent.ACTION_VIEW, espn);
             startActivity(webIntent);
         }
     }
 }
-
 

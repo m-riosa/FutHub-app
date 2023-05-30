@@ -6,59 +6,16 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
-<!--    <TextView-->
-<!--        android:id="@+id/txtTitlePrem"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Premier League"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.07"-->
-<!--        android:textSize="@android:dimen/app_icon_size"-->
-<!--        android:gravity="center"-->
-<!--        />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnFubo"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:text="To Fubo"-->
-<!--        android:onClick="openFubo"/>-->
-
-<!--    <Space-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnPeacock"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:text="To Peacock"-->
-<!--        android:onClick="openPeacock"/>-->
-
-<!--    <Space-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/requestHTTP"-->
-<!--         android:layout_height="wrap_content"-->
-<!--         android:layout_width="wrap_content"-->
-<!--        />-->
+    <Switch
+        android:id="@+id/lightSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_fixture"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-
-
+        android:layout_height="match_parent" />
 
 </LinearLayout>
 

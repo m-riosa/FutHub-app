@@ -21,6 +21,12 @@
             android:name=".UCL"
             android:exported="false" />
         <activity
+            android:name=".UEL"
+            android:exported="false" />
+        <activity
+            android:name=".Conference_League"
+            android:exported="false" />
+        <activity
             android:name=".SerieA"
             android:exported="false" />
         <activity
@@ -38,9 +44,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="keyValue"
-            android:value="${KEY}"/>
     </application>
 
 </manifest>

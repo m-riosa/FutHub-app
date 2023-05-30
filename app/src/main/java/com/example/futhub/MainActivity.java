@@ -63,13 +63,18 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         Button buttonPrem = findViewById(R.id.buttonPrem);
         Button buttonSerieA = findViewById(R.id.buttonSerieA);
         Button buttonUcl = findViewById(R.id.buttonUCL);
+        Button buttonUel = findViewById(R.id.buttonUEL);
+        Button buttonConference = findViewById(R.id.buttonConferenceLeague);
         Button buttonArg = findViewById(R.id.buttonArg);
+
 
         buttonLaLiga.setOnClickListener(this);
         buttonPrem.setOnClickListener(this);
         buttonSerieA.setOnClickListener(this);
         buttonUcl.setOnClickListener(this);
         buttonArg.setOnClickListener(this);
+        buttonUel.setOnClickListener(this);
+        buttonConference.setOnClickListener(this);
 
 
     }
@@ -88,6 +93,12 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 break;
             case R.id.buttonUCL:
                 openUCL();
+                break;
+            case R.id.buttonUEL:
+                openUEL();
+                break;
+            case R.id.buttonConferenceLeague:
+                openConfernce();
                 break;
             case R.id.buttonArg:
                 openLigaArg();
@@ -112,6 +123,14 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     }
     public void openUCL(){
         Intent intent = new Intent(this, UCL.class);
+        startActivity(intent);
+    }
+    public void openUEL(){
+        Intent intent = new Intent(this, UEL.class);
+        startActivity(intent);
+    }
+    public void openConfernce(){
+        Intent intent = new Intent(this, Conference_League.class);
         startActivity(intent);
     }
     public void openLigaArg(){

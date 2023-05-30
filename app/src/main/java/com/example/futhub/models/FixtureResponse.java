@@ -9,6 +9,5 @@ public class FixtureResponse {
     public int results;
     public Paging paging;
     public ArrayList<Response> response;
-    public ArrayList<FixtureData> data;
 
 }
