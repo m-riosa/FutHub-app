@@ -92,6 +92,11 @@ public class UCL extends AppCompatActivity {
             FixtureAdapter adapter = new FixtureAdapter(UCL.this, response.response);
             recyclerView.setAdapter(adapter);
 
+            if (response.response.size() == 0){
+                Toast.makeText(UCL.this, "No future games found", Toast.LENGTH_LONG).show();
+            }
+
+
         }
 
         @Override

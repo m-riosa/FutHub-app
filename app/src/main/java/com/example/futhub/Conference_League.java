@@ -92,6 +92,11 @@ public class Conference_League extends AppCompatActivity {
             FixtureAdapter adapter = new FixtureAdapter(Conference_League.this, response.response);
             recyclerView.setAdapter(adapter);
 
+            if (response.response.size() == 0){
+                Toast.makeText(Conference_League.this, "No future games found", Toast.LENGTH_LONG).show();
+            }
+
+
         }
 
         @Override

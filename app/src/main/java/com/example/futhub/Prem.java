@@ -99,6 +99,9 @@ public class Prem extends AppCompatActivity {
                     LinearLayoutManager.VERTICAL, false));
             FixtureAdapter adapter = new FixtureAdapter(Prem.this, response.response);
             recyclerView.setAdapter(adapter);
+            if (response.response.size() == 0){
+                Toast.makeText(Prem.this, "No future games found", Toast.LENGTH_LONG).show();
+            }
 
         }
 

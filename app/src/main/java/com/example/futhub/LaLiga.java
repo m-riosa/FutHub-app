@@ -95,6 +95,11 @@ public class LaLiga extends AppCompatActivity {
             FixtureAdapter adapter = new FixtureAdapter(LaLiga.this, response.response);
             recyclerView.setAdapter(adapter);
 
+            if (response.response.size() == 0){
+                Toast.makeText(LaLiga.this, "No future games found", Toast.LENGTH_LONG).show();
+            }
+
+
         }
 
         @Override

@@ -1,10 +1,13 @@
 package com.example.futhub.adapter;
 
 import android.content.Context;
+import android.media.Image;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,11 +15,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.futhub.R;
 import com.example.futhub.models.Response;
+import com.squareup.picasso.Picasso;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class FixtureAdapter extends RecyclerView.Adapter<FixtureViewHolder>{
     Context context;
@@ -50,6 +56,8 @@ public class FixtureAdapter extends RecyclerView.Adapter<FixtureViewHolder>{
         }
         holder.textView_home.setText(data.teams.home.name);
         holder.textView_away.setText(data.teams.away.name);
+        Picasso.get().load(data.teams.home.logo).into(holder.imageView_home);
+        Picasso.get().load(data.teams.away.logo).into(holder.imageView_away);
 
         holder.textView_match.setText(data.teams.home.name + " vs " + data.teams.away.name);
     }
@@ -62,6 +70,7 @@ public class FixtureAdapter extends RecyclerView.Adapter<FixtureViewHolder>{
 }
 
 class FixtureViewHolder extends RecyclerView.ViewHolder {
+    ImageView imageView_home, imageView_away;
     TextView textView_home, textView_away, textView_time, textView_match;
     //ImageView
 
@@ -72,5 +81,7 @@ class FixtureViewHolder extends RecyclerView.ViewHolder {
         textView_away = itemView.findViewById(R.id.textView_away);
         textView_time = itemView.findViewById(R.id.textView_time);
         textView_match = itemView.findViewById(R.id.textView_match);
+        imageView_home = itemView.findViewById(R.id.imageView_home);
+        imageView_away = itemView.findViewById(R.id.imageView_away);
     }
 }

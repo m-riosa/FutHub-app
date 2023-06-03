@@ -93,6 +93,12 @@ public class LigaArg extends AppCompatActivity {
             FixtureAdapter adapter = new FixtureAdapter(LigaArg.this, response.response);
             recyclerView.setAdapter(adapter);
 
+
+            if (response.response.size() == 0){
+                Toast.makeText(LigaArg.this, "No future games found", Toast.LENGTH_LONG).show();
+            }
+
+
         }
 
         @Override
