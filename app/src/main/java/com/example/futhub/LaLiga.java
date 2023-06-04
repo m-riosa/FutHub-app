@@ -9,6 +9,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -29,18 +31,17 @@ public class LaLiga extends AppCompatActivity {
     RequestManager manager;
 
     String leagueId = "140"; // Spanish League Code
-    String seasonId = "2022";
+    String next = "50";
     String application = "application/json";
     String host = "api-football-v1.p.rapidapi.com";
     String apiKey = "####";
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_prem);
+        setContentView(R.layout.activity_la_liga);
 
         // add support for night mode
         getSupportActionBar().hide();
@@ -80,7 +81,7 @@ public class LaLiga extends AppCompatActivity {
 
         // pass call to API with league id for La Liga
         manager = new RequestManager(this);
-        manager.getFixture(listener, application, apiKey, host, seasonId, leagueId);
+        manager.getFixture(listener, application, apiKey, host, next, leagueId);
         dialog.show();
     }
 
